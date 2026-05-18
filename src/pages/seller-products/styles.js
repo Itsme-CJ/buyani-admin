@@ -1,0 +1,160 @@
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(6),
+  },
+  header: {
+    marginBottom: theme.spacing(1),
+  },
+  subtitle: {
+    color: '#666',
+    marginBottom: theme.spacing(3),
+  },
+  searchRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: theme.spacing(2),
+    marginBottom: theme.spacing(3),
+    flexWrap: 'wrap',
+  },
+  searchInput: {
+    flex: 1,
+    minWidth: 240,
+    '& .MuiOutlinedInput-root': {
+      borderRadius: 8,
+      '&:hover fieldset': { borderColor: '#086108' },
+      '&.Mui-focused fieldset': { borderColor: '#086108' },
+    },
+  },
+  countText: {
+    color: '#888',
+    whiteSpace: 'nowrap',
+  },
+  center: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: 200,
+  },
+  empty: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+    color: '#aaa',
+  },
+  card: {
+    background: '#fff',
+    borderRadius: 12,
+    boxShadow: '0 2px 10px rgba(0,0,0,0.07)',
+    padding: theme.spacing(2),
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.spacing(1.5),
+    transition: 'box-shadow 0.2s',
+    '&:hover': {
+      boxShadow: '0 4px 20px rgba(0,0,0,0.13)',
+    },
+  },
+  cardTop: {
+    display: 'flex',
+    gap: theme.spacing(1.5),
+    alignItems: 'flex-start',
+  },
+  cardInfo: {
+    flex: 1,
+    minWidth: 0,
+  },
+  productName: {
+    fontWeight: 700,
+    fontSize: '0.95rem',
+    color: '#1b1b1b',
+    lineHeight: 1.3,
+    marginBottom: 2,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: '-webkit-box',
+    '-webkit-line-clamp': 2,
+    '-webkit-box-orient': 'vertical',
+  },
+  productCategory: {
+    fontSize: '0.78rem',
+    color: '#74c69d',
+    fontWeight: 600,
+    textTransform: 'uppercase',
+    letterSpacing: '0.03em',
+    marginBottom: 4,
+  },
+  productPrice: {
+    fontSize: '1.05rem',
+    fontWeight: 700,
+    color: '#086108',
+    marginBottom: 2,
+  },
+  productStock: {
+    fontSize: '0.8rem',
+    color: '#666',
+  },
+  storeRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 4,
+    paddingTop: theme.spacing(1),
+    borderTop: '1px solid #f0f0f0',
+  },
+  storeName: {
+    fontSize: '0.8rem',
+    color: '#555',
+    flex: 1,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  },
+  statusBadge: {
+    borderRadius: 12,
+    padding: '2px 10px',
+    fontSize: '0.72rem',
+    fontWeight: 700,
+    letterSpacing: '0.02em',
+    textTransform: 'uppercase',
+    flexShrink: 0,
+  },
+  actions: {
+    display: 'flex',
+    gap: theme.spacing(1),
+    marginTop: 'auto',
+  },
+  editBtn: {
+    flex: 1,
+    borderColor: '#086108',
+    color: '#086108',
+    fontWeight: 600,
+    fontSize: '0.78rem',
+    borderRadius: 8,
+    textTransform: 'none',
+    '&:hover': {
+      borderColor: '#064d05',
+      background: '#f0faf0',
+    },
+  },
+  deleteBtn: {
+    flex: 1,
+    borderColor: '#e63946',
+    color: '#e63946',
+    fontWeight: 600,
+    fontSize: '0.78rem',
+    borderRadius: 8,
+    textTransform: 'none',
+    '&:hover': {
+      borderColor: '#c0303a',
+      background: '#fff5f5',
+    },
+  },
+}));
+
+export default useStyles;

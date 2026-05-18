@@ -1,0 +1,222 @@
+import { makeStyles } from '@material-ui/core/styles';
+ 
+export default makeStyles(() => ({
+  /* ── Shell ──────────────────────────────────────────────── */
+  shell: {
+    display: 'flex',
+    height: '100vh',
+    overflow: 'hidden',
+    background: 'var(--ba-bg)',
+    fontFamily: 'var(--ba-font-body)',
+  },
+ 
+  /* ── Sidebar ────────────────────────────────────────────── */
+  sidebar: {
+    width: '240px',
+    minWidth: '240px',
+    background: 'var(--ba-sidebar)',
+    borderRight: '1px solid var(--ba-sidebar-border)',
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'relative',
+    overflow: 'hidden',
+    zIndex: 10,
+    flexShrink: 0,
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-60px',
+      left: '-40px',
+      width: '200px',
+      height: '200px',
+      background: 'radial-gradient(circle, rgba(31,138,61,0.18) 0%, transparent 70%)',
+      pointerEvents: 'none',
+    },
+  },
+  sidebarHidden: {
+    display: 'none',
+  },
+ 
+  /* ── Logo area ──────────────────────────────────────────── */
+  logoWrap: {
+    padding: '24px 20px 20px',
+    borderBottom: '1px solid var(--ba-sidebar-border)',
+    flexShrink: 0,
+  },
+  logoInner: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+  },
+  logoIcon: {
+    width: '36px',
+    height: '36px',
+    background: 'linear-gradient(135deg, #1F8A3D, #7DFF9B)',
+    borderRadius: '10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '18px',
+    flexShrink: 0,
+  },
+  logoTextWrap: {},
+  logoText: {
+    fontFamily: 'var(--ba-font-display)',
+    fontSize: '20px',
+    fontWeight: 800,
+    letterSpacing: '0.04em',
+    color: 'var(--ba-text)',
+    lineHeight: 1.1,
+    '& span': { color: 'var(--ba-accent)' },
+  },
+  logoSub: {
+    fontSize: '10px',
+    color: 'var(--ba-text3)',
+    letterSpacing: '0.1em',
+    textTransform: 'uppercase',
+    marginTop: '2px',
+  },
+ 
+  /* ── Nav ────────────────────────────────────────────────── */
+  nav: {
+    flex: 1,
+    padding: '16px 12px',
+    overflowY: 'auto',
+    '&::-webkit-scrollbar': { width: '3px' },
+    '&::-webkit-scrollbar-thumb': { background: 'rgba(125,255,155,0.12)', borderRadius: '4px' },
+  },
+  navLabel: {
+    fontSize: '10px',
+    letterSpacing: '0.12em',
+    textTransform: 'uppercase',
+    color: 'var(--ba-text3)',
+    padding: '12px 8px 6px',
+    fontWeight: 600,
+  },
+  navItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+    padding: '10px 12px',
+    borderRadius: '10px',
+    cursor: 'pointer',
+    marginBottom: '2px',
+    transition: 'all 0.2s',
+    fontSize: '13.5px',
+    color: 'var(--ba-text2)',
+    fontWeight: 400,
+    position: 'relative',
+    '&:hover': {
+      background: 'rgba(125,255,155,0.07)',
+      color: 'var(--ba-text)',
+    },
+    '& svg': {
+      fontSize: '16px',
+      width: '20px',
+      textAlign: 'center',
+      flexShrink: 0,
+    },
+  },
+  navItemActive: {
+    background: 'linear-gradient(135deg, rgba(31,138,61,0.35), rgba(125,255,155,0.10))',
+    color: 'var(--ba-accent) !important',
+    fontWeight: '600 !important',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      top: '50%',
+      transform: 'translateY(-50%)',
+      width: '3px',
+      height: '60%',
+      background: 'var(--ba-accent)',
+      borderRadius: '0 3px 3px 0',
+    },
+  },
+  navBadge: {
+    marginLeft: 'auto',
+    background: 'rgba(125,255,155,0.15)',
+    color: 'var(--ba-accent)',
+    fontSize: '10px',
+    fontWeight: 700,
+    padding: '2px 7px',
+    borderRadius: '20px',
+    border: '1px solid rgba(125,255,155,0.2)',
+  },
+ 
+  /* ── Sidebar footer ─────────────────────────────────────── */
+  sidebarFooter: {
+    padding: '16px 12px',
+    borderTop: '1px solid var(--ba-sidebar-border)',
+    flexShrink: 0,
+  },
+  adminChip: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    padding: '10px 12px',
+    background: 'rgba(125,255,155,0.06)',
+    borderRadius: '10px',
+    border: '1px solid var(--ba-card-border)',
+  },
+  adminAvatar: {
+    width: '32px',
+    height: '32px',
+    background: 'linear-gradient(135deg, #1F8A3D, #7DFF9B)',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '12px',
+    fontWeight: 700,
+    color: '#050f08',
+    flexShrink: 0,
+  },
+  adminInfo: {
+    flex: 1,
+    minWidth: 0,
+  },
+  adminName: {
+    fontSize: '12.5px',
+    fontWeight: 600,
+    color: 'var(--ba-text)',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
+  adminRole: {
+    fontSize: '10px',
+    color: 'var(--ba-text3)',
+  },
+ 
+  /* ── Main area ──────────────────────────────────────────── */
+  mainArea: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
+    minWidth: 0,
+  },
+ 
+  /* ── Content ────────────────────────────────────────────── */
+  content: {
+    flex: 1,
+    overflowY: 'auto',
+    padding: '24px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
+    '&::-webkit-scrollbar': { width: '4px' },
+    '&::-webkit-scrollbar-thumb': { background: 'rgba(125,255,155,0.15)', borderRadius: '4px' },
+  },
+ 
+  /* ── Mobile fallback ────────────────────────────────────── */
+  mobileContent: {
+    flex: 1,
+    overflowY: 'auto',
+    padding: '16px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+  },
+}));

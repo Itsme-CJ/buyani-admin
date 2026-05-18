@@ -1,0 +1,27 @@
+<svg width="260" height="80" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2E7D32"></stop>
+      <stop offset="100%" stop-color="#4CAF50"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Leaf Icon -->
+  <g transform="translate(15,10)">
+    <!-- Leaf shape -->
+    <path d="M20 50
+             C5 35, 5 10, 25 5
+             C45 10, 45 35, 20 50 Z" fill="url(#greenGradient)"></path>
+
+    <!-- Leaf vein -->
+    <path d="M20 45 C20 30, 25 18, 30 10" stroke="#2E7D32" stroke-width="2" fill="none"></path>
+
+    <!-- Highlight -->
+    <path d="M18 42 C12 30, 15 18, 22 10" stroke="#ffffff" stroke-width="1.5" opacity="0.4" fill="none"></path>
+  </g>
+
+  <!-- Text -->
+  <text x="70" y="45" font-family="Poppins, Arial, sans-serif" font-size="32" font-weight="700" fill="#2E7D32">
+    Bay<tspan fill="#4CAF50">Ani</tspan>
+  </text>
+</svg>

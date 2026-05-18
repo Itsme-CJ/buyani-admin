@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+:root {
+  --ba-bg:             #050f08;
+  --ba-bg2:            #081510;
+  --ba-bg3:            #0a1c12;
+  --ba-sidebar:        #081510;
+  --ba-sidebar-border: rgba(125, 255, 155, 0.08);
+  --ba-card:           rgba(12, 30, 18, 0.85);
+  --ba-card-border:    rgba(125, 255, 155, 0.12);
+  --ba-green1:         #0B5D1E;
+  --ba-green2:         #1F8A3D;
+  --ba-glow:           #7DFF9B;
+  --ba-text:           #f0fff4;
+  --ba-text2:          rgba(200, 240, 210, 0.65);
+  --ba-text3:          rgba(150, 200, 165, 0.45);
+  --ba-accent:         #7DFF9B;
+  --ba-accent2:        #4ade80;
+  --ba-font-display:   'Syne', sans-serif;
+  --ba-font-body:      'DM Sans', sans-serif;
+}
+
+/* ── Reset & base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.bayani-admin {
+  font-family: var(--ba-font-body);
+  background: var(--ba-bg);
+  color: var(--ba-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ────────────────────────────────────────── */
+.ba-scroll::-webkit-scrollbar          { width: 4px; }
+.ba-scroll::-webkit-scrollbar-track    { background: transparent; }
+.ba-scroll::-webkit-scrollbar-thumb    { background: rgba(125,255,155,0.15); border-radius: 4px; }
+
+/* ── Live pulse dot ───────────────────────────────────── */
+@keyframes ba-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+.ba-live-dot {
+  width: 7px; height: 7px;
+  background: var(--ba-accent);
+  border-radius: 50%;
+  display: inline-block;
+  animation: ba-pulse 1.5s infinite;
+}
+
+/* ── Stat card entrance ───────────────────────────────── */
+@keyframes ba-fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ba-fade-up { animation: ba-fadeUp 0.45s ease both; }
