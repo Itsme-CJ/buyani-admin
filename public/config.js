@@ -1,6 +1,4 @@
-window.ENVIRONMENT                 = 'LOCAL'
-// window.API_BASE_PATH               = 'https://BayAni.cloud/api'
-// window.WEBSOCKET_PATH              = 'https://BayAni.cloud'
-window.API_BASE_PATH               = `http://${window.location.hostname}:9000/api`;
-window.WEBSOCKET_PATH              = `http://${window.location.hostname}:9000`;
+window.ENVIRONMENT                 = 'PRODUCTION'
+window.API_BASE_PATH               = 'https://buyani-backend.onrender.com/api';
+window.WEBSOCKET_PATH              = 'https://buyani-backend.onrender.com';
 window.STORAGE_ACCOUNT             = ''
