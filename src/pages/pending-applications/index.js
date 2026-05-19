@@ -112,8 +112,11 @@ const SellerApplications = () => {
 
   const getStoreImage = (store) => {
     if (!store.image) return null;
-    const key = store.image.replace('https://f004.backblazeb2.com/file/alchives-cdn/', '');
-    return `http://localhost:9000/image?key=${encodeURIComponent(key)}`;
+    const key = store.image.startsWith('http')
+      ? store.image.replace('https://f004.backblazeb2.com/file/alchives-cdn/', '')
+      : store.image;
+    const backendBase = window.API_BASE_PATH.replace('/api', '');
+    return `${backendBase}/image?key=${encodeURIComponent(key)}`;
   };
 
   return (
