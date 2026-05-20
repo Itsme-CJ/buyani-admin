@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Tab, Tabs } from '@material-ui/core';
+﻿import { Box, Container, Grid, Tab, Tabs } from '@material-ui/core';
 import { AddBox, FilterList } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
@@ -205,11 +205,11 @@ const Product = (props) => {
 
 
   const handleAdd = () => {
-    history.push('/BayAni/inventories/create-product');
+    history.push('/BuyAni/inventories/create-product');
   }
 
   const onUpdate = (value) => {
-    history.push(`/BayAni/inventories/update-product/${value.id}`);
+    history.push(`/BuyAni/inventories/update-product/${value.id}`);
   }
 
   const handleView = (id) => {
@@ -504,11 +504,11 @@ const Categories = (props) => {
   }, [page, rowsPerPage, order, orderBy, keyword]);
 
   const handleAddCategory = () => {
-    history.push('/BayAni/inventories/create-category');
+    history.push('/BuyAni/inventories/create-category');
   }
 
   const onUpdate = (value) => {
-    history.push(`/BayAni/inventories/update-category/${value.id}`);
+    history.push(`/BuyAni/inventories/update-category/${value.id}`);
   }
 
   const handleView = (id) => {

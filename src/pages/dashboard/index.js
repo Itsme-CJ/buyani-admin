@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+﻿import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 import api from '../../service/api';
@@ -392,14 +392,14 @@ const Dashboard = () => {
           <div className={classes.heroBtns}>
             <button
               className={classes.btnPrimary}
-              onClick={() => history.push('/BayAni/reports')}
+              onClick={() => history.push('/BuyAni/reports')}
             >
               <FontAwesomeIcon icon={faChartLine} />
               View Reports
             </button>
             <button
               className={classes.btnGhost}
-              onClick={() => history.push('/BayAni/pending-applications')}
+              onClick={() => history.push('/BuyAni/pending-applications')}
             >
               <FontAwesomeIcon icon={faUserCheck} />
               Approve Sellers
@@ -488,7 +488,7 @@ const Dashboard = () => {
           <div className={classes.sectionTitle}>Pending Seller Applications</div>
           <div
             className={classes.seeAll}
-            onClick={() => history.push('/BayAni/pending-applications')}
+            onClick={() => history.push('/BuyAni/pending-applications')}
             role="button" tabIndex={0}
           >
             View all <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '10px' }} />

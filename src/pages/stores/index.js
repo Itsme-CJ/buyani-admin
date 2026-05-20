@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from '@material-ui/core';
+﻿import { Box, Container, Grid } from '@material-ui/core';
 import { AddBox } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
@@ -149,11 +149,11 @@ const Stores = (props) => {
   }, [page, rowsPerPage, order, orderBy, keyword]);
 
   const handleAddUser = () => {
-    history.push('/BayAni/stores/create');
+    history.push('/BuyAni/stores/create');
   }
 
   const onUpdate = (value) => {
-    history.push(`/BayAni/stores/update/${value.id}`);
+    history.push(`/BuyAni/stores/update/${value.id}`);
   }
 
   const handleDelete = async () => {
@@ -242,7 +242,7 @@ const Stores = (props) => {
       >
         <Box className={classes.deleteContent}>
           Are you sure you want to delete { deleteList.join(', ')}?
-          Deleting the store will remove all data and prevent the BayAni admins from accessing the system.
+          Deleting the store will remove all data and prevent the BuyAni admins from accessing the system.
         </Box>
       </Modal>
       <Modal 

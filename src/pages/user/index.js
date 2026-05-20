@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, Container, Grid, IconButton, InputAdornment, Paper } from '@material-ui/core';
+﻿import { Box, Button, CircularProgress, Container, Grid, IconButton, InputAdornment, Paper } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
@@ -80,7 +80,7 @@ const User = (props) => {
         data: newValues,
       })
 
-      history.push('/BayAni/users');
+      history.push('/BuyAni/users');
       let message = id ? 'updated' : 'created';
 
       delete newValues.pin
@@ -104,7 +104,7 @@ const User = (props) => {
   }
 
   const handleCancel = () => {
-    history.push('/BayAni/users');
+    history.push('/BuyAni/users');
   }
 
   const handeGetData = async() => {

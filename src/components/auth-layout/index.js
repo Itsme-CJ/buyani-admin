@@ -23,17 +23,17 @@ const AuthLayout = (props) => {
       title = 'Create Password';
     }
 
-    document.title = `BayAni - ${title}`;
+    document.title = `BuyAni - ${title}`;
   }, [pathname]);
 
   return (
     <Box className={classes.root}>
       <Box className={classes.backdrop} />
-      <img className={classes.background} src={backgroundAuthImage} alt='BayAni Background' />
+      <img className={classes.background} src={backgroundAuthImage} alt='BuyAni Background' />
       <Container className={classes.container}>
       {
         <Paper elevation={6} className={`${classes.paper} ${isTabletView ? classes.tPaper : classes.mPaper } ${!(isTabletView && isMobileView) && classes.lPaper}` }> 
-          <img className={classes.logo} src={logo} alt='BayAni Logo' />
+          <img className={classes.logo} src={logo} alt='BuyAni Logo' />
           <Box className={`${classes.content} ${classes.mContent} ${pathname.includes('forgot') && classes.forgotPasswordContent }`} >
             {
               children

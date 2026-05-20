@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import {
   Box,
   Button,
@@ -222,7 +222,7 @@ const SellerProducts = (props) => {
                 <Box className={classes.actions}>
                   <Button size="small" variant="outlined" startIcon={<EditIcon />}
                     className={classes.editBtn}
-                    onClick={() => history.push('/BayAni/seller-products/update/' + product.productItemId)}>
+                    onClick={() => history.push('/BuyAni/seller-products/update/' + product.productItemId)}>
                     Edit
                   </Button>
                   <Button size="small" variant="outlined" startIcon={<DeleteIcon />}

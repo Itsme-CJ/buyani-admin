@@ -9,7 +9,6 @@ import {
   faGear,
   faSignOut,
   faUserEdit,
-  faSearch,
   faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 import useResponsive from '../../hooks/useResponsive';
@@ -47,8 +46,8 @@ const NavigationBar = ({ isProfile, notify }) => {
     profile:              'Profile',
   };
   const segment = pathname.split('/').pop();
-  const pageLabel = PAGE_LABELS[segment] ?? 'BayAni';
-  const breadcrumb = `BayAni / ${pageLabel}`;
+  const pageLabel = PAGE_LABELS[segment] ?? 'BuyAni';
+  const breadcrumb = `BuyAni / ${pageLabel}`;
  
   /* Handlers */
   const signOut = () => {
@@ -73,7 +72,7 @@ const NavigationBar = ({ isProfile, notify }) => {
       {isMobileView && (
         <div className={classes.logoBtn} onClick={() => history.push('/')}>
           <div className={classes.logoIcon}>🌾</div>
-          <div className={classes.logoText}>Bay<span>Ani</span></div>
+          <div className={classes.logoText}>Buy<span>Ani</span></div>
         </div>
       )}
  
@@ -86,18 +85,6 @@ const NavigationBar = ({ isProfile, notify }) => {
       )}
  
       <div className={classes.spacer} />
- 
-      {/* Search */}
-      {!isMobileView && (
-        <div className={classes.searchWrap}>
-          <FontAwesomeIcon icon={faSearch} className={classes.searchIcon} />
-          <input
-            className={classes.searchInput}
-            type="text"
-            placeholder="Search farmers, orders…"
-          />
-        </div>
-      )}
  
       {/* Live pill */}
       {!isMobileView && (
@@ -149,11 +136,11 @@ const NavigationBar = ({ isProfile, notify }) => {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        <MenuItem onClick={() => handleMenuClick('/BayAni/profile')}>
+        <MenuItem onClick={() => handleMenuClick('/BuyAni/profile')}>
           <FontAwesomeIcon icon={faUserEdit} style={{ width: '16px' }} />
           Profile
         </MenuItem>
-        <MenuItem onClick={() => handleMenuClick('/BayAni/settings')}>
+        <MenuItem onClick={() => handleMenuClick('/BuyAni/settings')}>
           <FontAwesomeIcon icon={faGear} style={{ width: '16px' }} />
           Settings
         </MenuItem>

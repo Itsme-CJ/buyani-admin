@@ -44,39 +44,39 @@ const Routes = () => {
       {
         token && user.role.name === 'PADMIN' ?
           <EnhancedSwitch>
-            <Route path="/" exact><Redirect to="/BayAni/dashboard" /></Route>
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/dashboard" component={Dashboard} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/inventories" component={Inventories} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/messages" component={Messages} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/users" component={Users} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/users/create" component={User} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/users/update/:id" component={User} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/inventories/create-category" component={Category} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/inventories/update-category/:id" component={Category} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/inventories/create-product" component={ProductItem} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/inventories/update-product/:id" component={ProductItem} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/settings" component={Settings} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/profile" component={Profile} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/pending-applications" component={SellerApplications} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/manage-users" component={ManageUsers} />
-            <RoutesLayout exact layout={PortalLayout} path="/BayAni/manage-sellers" component={ManageSellers} />
+            <Route path="/" exact><Redirect to="/BuyAni/dashboard" /></Route>
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/dashboard" component={Dashboard} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/inventories" component={Inventories} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/messages" component={Messages} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/users" component={Users} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/users/create" component={User} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/users/update/:id" component={User} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/inventories/create-category" component={Category} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/inventories/update-category/:id" component={Category} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/inventories/create-product" component={ProductItem} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/inventories/update-product/:id" component={ProductItem} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/settings" component={Settings} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/profile" component={Profile} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/pending-applications" component={SellerApplications} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/manage-users" component={ManageUsers} />
+            <RoutesLayout exact layout={PortalLayout} path="/BuyAni/manage-sellers" component={ManageSellers} />
           </EnhancedSwitch>
         :
           token && user.role.name === 'PCASHIER' ?
             <EnhancedSwitch>
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/profile" component={Profile} />
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/profile" component={Profile} />
             </EnhancedSwitch>
           :
           token && user.role.name === 'ADMIN' ?
             <EnhancedSwitch>
-              <Route path="/" exact><Redirect to="/BayAni/stores" /></Route>
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/stores" component={Stores} />
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/stores/create" component={Store} />
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/stores/update/:id" component={Store} />
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/system-admins" component={SystemAdmins} />
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/system-admins/update/:id" component={SystemAdmin} />
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/system-admins/create" component={SystemAdmin} />
-              <RoutesLayout exact layout={PortalLayout} path="/BayAni/messages" component={Messages} />
+              <Route path="/" exact><Redirect to="/BuyAni/stores" /></Route>
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/stores" component={Stores} />
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/stores/create" component={Store} />
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/stores/update/:id" component={Store} />
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/system-admins" component={SystemAdmins} />
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/system-admins/update/:id" component={SystemAdmin} />
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/system-admins/create" component={SystemAdmin} />
+              <RoutesLayout exact layout={PortalLayout} path="/BuyAni/messages" component={Messages} />
             </EnhancedSwitch>
           :
             <EnhancedSwitch>

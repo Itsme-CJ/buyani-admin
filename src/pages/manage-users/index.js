@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from '@material-ui/core';
+﻿import { Box, Container, Grid } from '@material-ui/core';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import Modal from '../../components/modal';
@@ -141,7 +141,7 @@ const ManageUsers = (props) => {
 
   // ── Edit handler ──────────────────────────────────────────────────────────
   const onUpdate = (value) => {
-    history.push(`/BayAni/manage-users/update/${value.id}`);
+    history.push(`/BuyAni/manage-users/update/${value.id}`);
   };
 
   return (

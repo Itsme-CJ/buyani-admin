@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from '@material-ui/core';
+﻿import { Box, Container, Grid } from '@material-ui/core';
 import { AddBox } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
@@ -151,11 +151,11 @@ const SystemAdmins = (props) => {
   }, [page, rowsPerPage, order, orderBy, keyword]);
 
   const handleAddUser = () => {
-    history.push('/BayAni/system-admins/create');
+    history.push('/BuyAni/system-admins/create');
   }
 
   const onUpdate = (value) => {
-    history.push(`/BayAni/system-admins/update/${value.id}`);
+    history.push(`/BuyAni/system-admins/update/${value.id}`);
   }
 
   const handleDelete = async () => {

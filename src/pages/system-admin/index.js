@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, Container, Grid, Paper } from '@material-ui/core';
+﻿import { Box, Button, CircularProgress, Container, Grid, Paper } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
@@ -62,7 +62,7 @@ const SystemAdmin = (props) => {
       const operation = id ? 'updated' : 'created'
       await handleAuditLog(state, id, null, 'developer', operation, prevVal, newValues)
 
-      history.push('/BayAni/system-admins');
+      history.push('/BuyAni/system-admins');
       let message = id ? 'updated' : 'created';
 
       notify('success', `${response.data.lastName}, ${response.data.firstName} has been ${message} successfully!`);
@@ -82,7 +82,7 @@ const SystemAdmin = (props) => {
   }
 
   const handleCancel = () => {
-    history.push('/BayAni/system-admins');
+    history.push('/BuyAni/system-admins');
   }
 
   const handeGetData = async() => {

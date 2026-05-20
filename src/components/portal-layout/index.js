@@ -24,18 +24,18 @@ import {
  
 /* ── Nav menu definitions ───────────────────────────────── */
 const MENU_PADMIN = (pendingCount) => [
-  { name: 'Dashboard',         path: '/BayAni/dashboard',            icon: faTableCellsLarge, label: 'Main' },
-  { name: 'Pending Sellers',   path: '/BayAni/pending-applications', icon: faStore,           label: null, badge: pendingCount > 0 ? String(pendingCount) : null },
-  { name: 'Manage Users',      path: '/BayAni/manage-users',         icon: faUsers,           label: null },
-  { name: 'Manage Sellers',    path: '/BayAni/manage-sellers',       icon: faStoreAlt,        label: 'Commerce' },
-  { name: 'Settings',          path: '/BayAni/settings',             icon: faGear,            label: null },
+  { name: 'Dashboard',         path: '/BuyAni/dashboard',            icon: faTableCellsLarge, label: 'Main' },
+  { name: 'Pending Sellers',   path: '/BuyAni/pending-applications', icon: faStore,           label: null, badge: pendingCount > 0 ? String(pendingCount) : null },
+  { name: 'Manage Users',      path: '/BuyAni/manage-users',         icon: faUsers,           label: null },
+  { name: 'Manage Sellers',    path: '/BuyAni/manage-sellers',       icon: faStoreAlt,        label: 'Commerce' },
+  { name: 'Settings',          path: '/BuyAni/settings',             icon: faGear,            label: null },
 ];
  
 const MENU_ADMIN = [
-  { name: 'Developers',        path: '/BayAni/system-admins',        icon: faUsersGear,       label: 'Main' },
-  { name: 'Stores',            path: '/BayAni/stores',               icon: faStoreAlt,        label: null },
-  { name: 'Manage Users',      path: '/BayAni/manage-users',         icon: faUsers,           label: null },
-  { name: 'Manage Sellers',    path: '/BayAni/manage-sellers',       icon: faStoreAlt,        label: null },
+  { name: 'Developers',        path: '/BuyAni/system-admins',        icon: faUsersGear,       label: 'Main' },
+  { name: 'Stores',            path: '/BuyAni/stores',               icon: faStoreAlt,        label: null },
+  { name: 'Manage Users',      path: '/BuyAni/manage-users',         icon: faUsers,           label: null },
+  { name: 'Manage Sellers',    path: '/BuyAni/manage-sellers',       icon: faStoreAlt,        label: null },
 ];
  
 /* ── Component ──────────────────────────────────────────── */
@@ -90,7 +90,7 @@ const PortalLayout = ({ children }) => {
     const idx = menu.findIndex(m => pathname.includes(m.path.split('/').pop()));
     setSelectedIndex(idx >= 0 ? idx : 0);
     const active = menu.find(m => pathname.includes(m.path.split('/').pop()));
-    document.title = `BayAni - ${active?.name ?? 'Dashboard'}`;
+    document.title = `BuyAni - ${active?.name ?? 'Dashboard'}`;
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
  
   const handleNavClick = (index, path) => {
@@ -114,7 +114,7 @@ const PortalLayout = ({ children }) => {
               <div className={classes.logoIcon}>🌾</div>
               <div className={classes.logoTextWrap}>
                 <div className={classes.logoText}>
-                  Bay<span>Ani</span>
+                  Buy<span>Ani</span>
                 </div>
                 <div className={classes.logoSub}>Admin Portal</div>
               </div>

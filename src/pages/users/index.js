@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from '@material-ui/core';
+﻿import { Box, Container, Grid } from '@material-ui/core';
 import { Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
@@ -166,11 +166,11 @@ const Users = (props) => {
   console.log('Data', data)
 
   const handleAddUser = () => {
-    history.push('/BayAni/users/create');
+    history.push('/BuyAni/users/create');
   }
 
   const onUpdate = (value) => {
-    history.push(`/BayAni/users/update/${value.id}`);
+    history.push(`/BuyAni/users/update/${value.id}`);
   }
 
   const handleDelete = async () => {

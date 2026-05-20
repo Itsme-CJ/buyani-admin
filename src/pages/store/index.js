@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, Container, Grid, IconButton, InputAdornment, Paper, Typography } from '@material-ui/core';
+﻿import { Box, Button, CircularProgress, Container, Grid, IconButton, InputAdornment, Paper, Typography } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
@@ -66,7 +66,7 @@ const Store = (props) => {
   }
 
   const handleCancel = () => {
-    history.push('/BayAni/stores');
+    history.push('/BuyAni/stores');
   }
 
   const handleSubmit =  async(values, formik) => {
@@ -128,7 +128,7 @@ const Store = (props) => {
           },
         })
       }
-      history.push('/BayAni/stores');
+      history.push('/BuyAni/stores');
       notify('success', `${response.data.name} has been ${id ? 'updated': 'created'} successfully!`);
     } catch(error) {
       notify('error', `Failed to ${id ? 'update': 'create'} a store! User or Name already exist`);
@@ -320,7 +320,7 @@ const Store = (props) => {
                   !id ?
                   <Grid container spacing={2}>
                     <Grid item lg={12} md={12} sm={12} xs={12}>
-                     <Typography><strong>Initial BayAni Admin </strong></Typography>
+                     <Typography><strong>Initial BuyAni Admin </strong></Typography>
                     </Grid>
                     <Grid item lg={3} md={6} sm={12} xs={12}>
                     <TextField

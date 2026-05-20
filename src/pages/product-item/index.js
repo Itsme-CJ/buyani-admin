@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, Container, Grid, Paper } from '@material-ui/core';
+﻿import { Box, Button, CircularProgress, Container, Grid, Paper } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
@@ -19,8 +19,8 @@ const ProductItem = (props) => {
   const { match, notify } = props;
   const { id } = match.params;
   const isCreate = id === 'create';
-  const isSellerProductsRoute = match.path && match.path.startsWith('/BayAni/seller-products');
-  const backPath = isSellerProductsRoute ? '/BayAni/seller-products' : '/BayAni/inventories';
+  const isSellerProductsRoute = match.path && match.path.startsWith('/BuyAni/seller-products');
+  const backPath = isSellerProductsRoute ? '/BuyAni/seller-products' : '/BuyAni/inventories';
   
   const classes = useStyles();
   const history = useHistory();

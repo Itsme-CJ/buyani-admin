@@ -1,4 +1,4 @@
-import { Box, Button, CircularProgress, Container, Grid, Paper } from '@material-ui/core';
+﻿import { Box, Button, CircularProgress, Container, Grid, Paper } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
 import React, { useContext, useEffect, useState } from 'react';
@@ -56,7 +56,7 @@ const Category = (props) => {
         data: newValues,
       })
 
-      history.push('/BayAni/inventories');
+      history.push('/BuyAni/inventories');
       let message = id ? 'updated' : 'created';
       await handleAuditLog(state, id, state.user.storeId, 'category', message, prevVal, newValues)
 
@@ -78,7 +78,7 @@ const Category = (props) => {
   }
 
   const handleCancel = () => {
-    history.push('/BayAni/inventories');
+    history.push('/BuyAni/inventories');
   }
 
   const handeGetData = async() => {
