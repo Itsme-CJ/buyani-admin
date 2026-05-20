@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { theme } from './themes';
-import './themes/BuyAni.css';
+import './themes/bayani.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
