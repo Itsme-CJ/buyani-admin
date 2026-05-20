@@ -9,7 +9,7 @@ import '../../themes/bayani.css';
 import api from '../../service/api';
 import { request } from '../../service/request';
 import { API_METHOD } from '../../utility/constant';
- 
+
 /* ── Icons (FontAwesome kept for compatibility) ─────────── */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -21,7 +21,7 @@ import {
   faShoppingCart,
   faUsersGear,
 } from '@fortawesome/free-solid-svg-icons';
- 
+
 /* ── Nav menu definitions ───────────────────────────────── */
 const MENU_PADMIN = (pendingCount) => [
   { name: 'Dashboard',         path: '/BuyAni/dashboard',            icon: faTableCellsLarge, label: 'Main' },
@@ -30,14 +30,14 @@ const MENU_PADMIN = (pendingCount) => [
   { name: 'Manage Sellers',    path: '/BuyAni/manage-sellers',       icon: faStoreAlt,        label: 'Commerce' },
   { name: 'Settings',          path: '/BuyAni/settings',             icon: faGear,            label: null },
 ];
- 
+
 const MENU_ADMIN = [
   { name: 'Developers',        path: '/BuyAni/system-admins',        icon: faUsersGear,       label: 'Main' },
   { name: 'Stores',            path: '/BuyAni/stores',               icon: faStoreAlt,        label: null },
   { name: 'Manage Users',      path: '/BuyAni/manage-users',         icon: faUsers,           label: null },
   { name: 'Manage Sellers',    path: '/BuyAni/manage-sellers',       icon: faStoreAlt,        label: null },
 ];
- 
+
 /* ── Component ──────────────────────────────────────────── */
 const PortalLayout = ({ children }) => {
   const classes = useStyles();
@@ -45,11 +45,11 @@ const PortalLayout = ({ children }) => {
   const { state } = useContext(AuthContext);
   const { user } = state;
   const { pathname } = history.location;
- 
+
   const { isMobileView, isTabletView } = useResponsive();
   const isResponsive = isMobileView || isTabletView;
   const isProfile = pathname.includes('profile');
- 
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [pendingCount, setPendingCount] = useState(0);
 
@@ -74,7 +74,7 @@ const PortalLayout = ({ children }) => {
   const menu =
     user.role.name === 'ADMIN'    ? MENU_ADMIN :
     user.role.name === 'PCASHIER' ? []         : MENU_PADMIN(pendingCount);
- 
+
   /* Toast helper (passed down to NavigationBar) */
   const notify = (type, message) => {
     const opt = {
@@ -84,7 +84,7 @@ const PortalLayout = ({ children }) => {
     };
     type === 'success' ? toast.success(message, opt) : toast.error(message, opt);
   };
- 
+
   /* Sync selected index & document title with current path */
   useEffect(() => {
     const idx = menu.findIndex(m => pathname.includes(m.path.split('/').pop()));
@@ -92,20 +92,21 @@ const PortalLayout = ({ children }) => {
     const active = menu.find(m => pathname.includes(m.path.split('/').pop()));
     document.title = `BuyAni - ${active?.name ?? 'Dashboard'}`;
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
- 
+
   const handleNavClick = (index, path) => {
     setSelectedIndex(index);
     history.push(path);
   };
- 
+
   /* ── Render: hide sidebar on mobile/profile pages ─────── */
   const showSidebar = !isResponsive && !isProfile;
- 
+  const showBottomNav = isResponsive && !isProfile && menu.length > 0;
+
   return (
     <div className={classes.shell} style={{ background: 'var(--ba-bg)' }}>
       <ToastContainer />
- 
-      {/* ── Sidebar ────────────────────────────────────── */}
+
+      {/* ── Sidebar (desktop only) ─────────────────────── */}
       {showSidebar && (
         <aside className={classes.sidebar}>
           {/* Logo */}
@@ -120,7 +121,7 @@ const PortalLayout = ({ children }) => {
               </div>
             </div>
           </div>
- 
+
           {/* Nav items */}
           <nav className={classes.nav}>
             {menu.map((item, index) => (
@@ -144,7 +145,7 @@ const PortalLayout = ({ children }) => {
               </React.Fragment>
             ))}
           </nav>
- 
+
           {/* Admin chip */}
           <div className={classes.sidebarFooter}>
             <div className={classes.adminChip}>
@@ -161,7 +162,7 @@ const PortalLayout = ({ children }) => {
           </div>
         </aside>
       )}
- 
+
       {/* ── Main area ──────────────────────────────────── */}
       <div className={classes.mainArea}>
         <NavigationBar isProfile={isProfile} notify={notify} />
@@ -169,8 +170,32 @@ const PortalLayout = ({ children }) => {
           {children}
         </div>
       </div>
+
+      {/* ── Mobile bottom navigation ───────────────────── */}
+      {showBottomNav && (
+        <nav className={classes.mobileNav}>
+          {menu.map((item, index) => (
+            <div
+              key={item.path}
+              className={`${classes.mobileNavItem} ${selectedIndex === index ? classes.mobileNavItemActive : ''}`}
+              onClick={() => handleNavClick(index, item.path)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && handleNavClick(index, item.path)}
+            >
+              <div className={classes.mobileNavIconWrap}>
+                <FontAwesomeIcon icon={item.icon} className={classes.mobileNavIcon} />
+                {item.badge && (
+                  <span className={classes.mobileNavBadge}>{item.badge}</span>
+                )}
+              </div>
+              <span className={classes.mobileNavLabel}>{item.name}</span>
+            </div>
+          ))}
+        </nav>
+      )}
     </div>
   );
 };
- 
+
 export default PortalLayout;

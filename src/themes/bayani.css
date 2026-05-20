@@ -55,3 +55,29 @@ body.bayani-admin {
   to   { opacity: 1; transform: translateY(0); }
 }
 .ba-fade-up { animation: ba-fadeUp 0.45s ease both; }
+
+/* ── Responsive table wrapper ─────────────────────────── */
+.ba-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Mobile-only utility classes ──────────────────────── */
+@media (max-width: 600px) {
+  .ba-hide-mobile { display: none !important; }
+  .ba-card-mobile {
+    border-radius: 14px !important;
+    padding: 16px !important;
+  }
+  .ba-hero-mobile {
+    padding: 20px 18px !important;
+  }
+  .ba-hero-mobile h1 {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .ba-hide-tablet { display: none !important; }
+}

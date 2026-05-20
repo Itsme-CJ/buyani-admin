@@ -13,6 +13,10 @@ export default makeStyles(() => ({
   hero: {
     borderRadius: '18px',
     padding: '32px 36px',
+    '@media (max-width: 600px)': {
+      padding: '20px 18px',
+      borderRadius: '14px',
+    },
     position: 'relative',
     overflow: 'hidden',
     background: 'linear-gradient(135deg, #0B5D1E 0%, #0a2e14 50%, #051008 100%)',
@@ -52,6 +56,9 @@ export default makeStyles(() => ({
     position: 'relative',
     zIndex: 1,
     maxWidth: '55%',
+    '@media (max-width: 600px)': {
+      maxWidth: '100%',
+    },
   },
   heroEyebrow: {
     display: 'inline-flex',
@@ -156,6 +163,12 @@ export default makeStyles(() => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '16px',
+    '@media (max-width: 900px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+    '@media (max-width: 600px)': {
+      gridTemplateColumns: '1fr',
+    },
   },
   statCard: {
     background: 'var(--ba-card)',
@@ -224,6 +237,9 @@ export default makeStyles(() => ({
     gridTemplateColumns: '1.6fr 1fr',
     gap: '16px',
     alignItems: 'stretch',
+    '@media (max-width: 900px)': {
+      gridTemplateColumns: '1fr',
+    },
   },
   chartCard: {
     background: 'var(--ba-card)',

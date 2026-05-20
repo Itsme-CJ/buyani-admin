@@ -1,33 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+
+const getBreakpoints = () => {
+  const w = window.innerWidth;
+  return {
+    isMobileView: w <= 600,
+    isTabletView: w <= 900 && w > 600,
+  };
+};
 
 const useResponsive = () => {
-  const [isMobileView, setIsMobileView]       = useState(false);
-  const [isTabletView, setIsTabletView]       = useState(false);
-  const [isResponsive, setIsResponsive]       = useState(false);
-  const [windowDimension, setWindowDimension] = useState({
-    windowWidth : window.innerWidth
-  });
+  const [bp, setBp] = useState(getBreakpoints);
 
   useEffect(() => {
-    const updateWindowDimension = () => {
-      setWindowDimension({
-        windowWidth  : window.innerWidth
-      })
-    }
-    window.addEventListener('resize', updateWindowDimension);
-    const widthSize = windowDimension.windowWidth;
-    const tableView = widthSize <= 900 && widthSize > 600;
-    const mobileView = widthSize <= 600;
+    const onResize = () => setBp(getBreakpoints());
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
-    setIsTabletView(tableView);
-    setIsMobileView(mobileView);
-    setIsResponsive(tableView || mobileView);
-    return() => {
-      window.removeEventListener('resize', updateWindowDimension);
-    }
-  }, [windowDimension]);
+  return {
+    isMobileView: bp.isMobileView,
+    isTabletView: bp.isTabletView,
+    isResponsive: bp.isMobileView || bp.isTabletView,
+  };
+};
 
-  return { isMobileView, isTabletView, isResponsive }
-}
-
-export default useResponsive
+export default useResponsive;
